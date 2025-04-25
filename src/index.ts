@@ -9,11 +9,11 @@ const rl = readline.createInterface({
 
 async function chat() {
   const history: Message[] = [];
-  console.log('\nAsk me anything about React, or type "exit" to quit\n');
+  console.log('\nAsk me anything about [x], or type "exit" to quit\n');
   const systemMessage: Message = {
     role: "system",
     content:
-      "You are a friendly React teacher. Use ONLY the context I provide you to answer the user's questions. If the entries aren't relevant to the question or you do not have enough context to answer appropriately, do not try to answer. If the user asks a question that is not related to React, explain that you can't answer it. It is important that you only use the context I provide you to answer questions.",
+      "You are a friendly teacher. Use ONLY the context I provide you to answer the user's questions. If the entries aren't relevant to the question or you do not have enough context to answer appropriately, do not try to answer. If the user asks a question that is not related to [x], explain that you can't answer it. It is important that you only use the context I provide you to answer questions.",
   };
 
   history.push(systemMessage);
@@ -24,7 +24,7 @@ async function chat() {
     });
 
     if (userInput.toLowerCase() === "exit") {
-      console.log("\nReact-Bot: Thanks for chatting, bye!");
+      console.log("\nContextual: Thanks for chatting, bye!");
       break;
     }
 
@@ -44,7 +44,7 @@ async function chat() {
       };
 
       history.push(assistantMessage);
-      console.log(`\nReact-Bot: ${assistantMessage.content}\n`);
+      console.log(`\nContextual: ${assistantMessage.content}\n`);
     } catch (error) {
       console.error("Error:", error);
     }

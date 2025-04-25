@@ -13,7 +13,7 @@ const pool = new Pool({
   port: 5432,
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
-  database: "react_rag",
+  database: "contextual",
 });
 
 export interface SearchResult {
